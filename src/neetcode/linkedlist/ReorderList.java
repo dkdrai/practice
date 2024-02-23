@@ -1,5 +1,7 @@
 package neetcode.linkedlist;
 
+import datastructures.ListNode;
+
 public class ReorderList {
 
   static ListNode head;
@@ -26,7 +28,7 @@ public class ReorderList {
       p1 = p1.next;
       p2 = p2.next.next;
     }
-    System.out.println(p1.val +" "+ p2.val);
+    System.out.println(p1.data +" "+ p2.data);
 
     //Reverse the half after middle  1->2->3->4->5->6 to 1->2->3->6->5->4
     ListNode mid = p1;

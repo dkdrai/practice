@@ -1,84 +1,48 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Test {
 
     public static void main(String args[]) {
-        String b[] = {".v.", "...", "A.."};
-        System.out.println(solution(b));
+        String s = "abc";
+        List<String> result = new ArrayList<>();
+        permute(s, result,0);
+        System.out.println(result);
+
+        int arr[] = {1,2,3};
+        List<List<Integer>> subSets = new ArrayList<>();
+        subset(arr, subSets, new ArrayList<>(), 0);
+        System.out.println(subSets);
     }
 
-    static boolean mat[][] = new boolean[501][501];
-    static boolean vis[][] = new boolean[501][501];
-    static int n, m;
-
-
-    static boolean dfs(int x, int y) {
-
-        if (x < 0 || x >= m || y < 0 || y >= n || vis[x][y] || mat[x][y])
-            return false;
-        vis[x][y] = true;
-        if (x == m - 1 && y == n - 1)
-            return true;
-        return dfs(x - 1, y) || dfs(x + 1, y) || dfs(x, y - 1) || dfs(x, y + 1);
-    }
-
-
-    static boolean solution(String[] B) {
-        m = B.length;
-        n = B[0].length();
-        int x = 0;
-        int y = 0;
-        for (int i = 0; i < 501; i++) {
-            for (int j = 0; j < 501; j++) {
-                mat[i][j] = false;
-                vis[i][j] = false;
-            }
+    public static void subset(int arr[], List<List<Integer>> result, List<Integer> subList, int n){
+        if(n == arr.length){
+            result.add(new ArrayList<>(subList));
+            return;
         }
-        for (int i = 0; i < m; i++)
-            for (int j = 0; j < n; j++) {
-                if (B[i].charAt(j) == 'X')
-                    mat[i][j] = true;
-                else if (B[i].charAt(j) == '>')
-                    for (int k = j; k < n; k++) {
-                        if (B[i].charAt(k) == 'A')
-                            return false;
-                        if (B[i].charAt(k) != '.')
-                            break;
-                        mat[i][k] = true;
-                    }
-                else if (B[i].charAt(j) == '^')
-                    for (int k = i; k >= 0; k--) {
-                        if (B[k].charAt(j) == 'A')
-                            return false;
-                        if (B[k].charAt(j) != '.')
-                            break;
-                        mat[k][j] = true;
-                    }
-                else if (B[i].charAt(j) == '<')
-                    for (int k = j; k >= 0; k--) {
-                        if (B[i].charAt(j) == 'A')
-                            return false;
-                        if (B[i].charAt(j) != '.')
-                            break;
-                        mat[i][k] = true;
-                    }
-                else if (B[i].charAt(j) == '.')
-                    continue;
-                else if (B[i].charAt(j) == 'A') {
-                    x = i;
-                    y = j;
-                    continue;
-                } else
-                    for (int k = i; k < m; k++) {
-                        if (B[k].charAt(j) == 'A')
-                            return false;
-                        if (B[k].charAt(j) != '.')
-                            break;
-                        mat[k][j] = true;
-                    }
-            }
-        return dfs(x, y);
+
+        subset(arr, result, subList, n+1);
+        subList.add(arr[n]);
+        subset(arr, result, subList, n+1);
+        subList.remove(subList.size()-1);
+    }
+
+    public static void permute(String s, List<String> result, int n) {
+        if (n == s.length()) {
+            result.add(s);
+            return;
+        }
+        for (int i = n; i < s.length(); i++) {
+            char c[] = s.toCharArray();
+            swap(c, i, n);
+            permute(String.valueOf(c), result, n + 1);
+            swap(c, i, n);
+        }
+    }
+
+    public static void swap(char[] c, int a, int b) {
+        char temp = c[a];
+        c[a] = c[b];
+        c[b] = temp;
     }
 
 

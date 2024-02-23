@@ -32,8 +32,8 @@ public class GridTraveler {
 
     //brute force
     public static long waysMemo(int r, int c) {
-        String key = r+","+c;
-        if(map.containsKey(key)){
+        String key = r + "," + c;
+        if (map.containsKey(key)) {
             return map.get(key);
         }
         if (r == 0 || c == 0) {

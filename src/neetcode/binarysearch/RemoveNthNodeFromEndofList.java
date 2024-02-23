@@ -1,6 +1,6 @@
 package neetcode.binarysearch;
 
-import neetcode.linkedlist.ListNode;
+import datastructures.ListNode;
 
 public class RemoveNthNodeFromEndofList {
 

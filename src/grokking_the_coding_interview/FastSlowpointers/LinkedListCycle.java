@@ -1,5 +1,7 @@
 package grokking_the_coding_interview.FastSlowpointers;
 
+import datastructures.ListNode;
+
 //Given the head of a Singly LinkedList, write a function to determine if the LinkedList has a cycle in it or not.
 public class LinkedListCycle {
 

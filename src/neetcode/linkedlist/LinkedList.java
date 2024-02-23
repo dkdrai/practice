@@ -1,5 +1,7 @@
 package neetcode.linkedlist;
 
+import datastructures.ListNode;
+
 public class LinkedList {
 
 
@@ -19,7 +21,7 @@ public class LinkedList {
     ListNode current = head;
     head = head.next;
     current.next = null;
-    return current.val;
+    return current.data;
   }
 
   public ListNode removeFromEnd() {
@@ -43,7 +45,7 @@ public class LinkedList {
   public void printList() {
     ListNode current = head;
     while (current != null) {
-      System.out.println(current.val);
+      System.out.println(current.data);
       current = current.next;
     }
   }

@@ -1,7 +1,7 @@
 package grokking_the_coding_interview.TwoPointers;
 
 /*
-Comparing Strings containing Backspaces (medium) #
+Comparing examples.Strings containing Backspaces (medium) #
 Given two strings containing backspaces (identified by the character ‘#’), check if the two strings are equal.
 
 Example 1:

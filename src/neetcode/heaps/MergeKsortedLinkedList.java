@@ -2,7 +2,7 @@ package neetcode.heaps;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
-import neetcode.linkedlist.ListNode;
+import datastructures.ListNode;
 
 public class MergeKsortedLinkedList {
 
@@ -23,7 +23,7 @@ public class MergeKsortedLinkedList {
     ListNode[] lists = {listNode1, listNode2, listNode3, listNode4};
     ListNode head = mergeKLists(lists);
     while (head != null) {
-      System.out.println(head.val);
+      System.out.println(head.data);
       head = head.next;
     }
 
@@ -36,9 +36,9 @@ public class MergeKsortedLinkedList {
     PriorityQueue<ListNode> queue = new PriorityQueue<>(new Comparator<ListNode>() {
       @Override
       public int compare(ListNode o1, ListNode o2) {
-        if (o1.val < o2.val) {
+        if (o1.data < o2.data) {
           return -1;
-        } else if (o1.val == o2.val) {
+        } else if (o1.data == o2.data) {
           return 0;
         } else {
           return 1;

@@ -1,6 +1,8 @@
 package neetcode.linkedlist;
 
 
+import datastructures.ListNode;
+
 public class Reverse {
 
   public static void main(String args[]) {
@@ -10,13 +12,13 @@ public class Reverse {
     node.next.next.next = new ListNode(4);
     ListNode current = node;
     while (current != null) {
-      System.out.println(current.val);
+      System.out.println(current.data);
       current = current.next;
     }
     ListNode head = reverse(node);
     current = head;
     while (current != null) {
-      System.out.println(current.val);
+      System.out.println(current.data);
       current = current.next;
     }
   }

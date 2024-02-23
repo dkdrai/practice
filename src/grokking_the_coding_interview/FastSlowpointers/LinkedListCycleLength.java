@@ -1,6 +1,8 @@
 package grokking_the_coding_interview.FastSlowpointers;
 //Problem 1: Given the head of a LinkedList with a cycle, find the length of the cycle.
 
+import datastructures.ListNode;
+
 public class LinkedListCycleLength {
 
   public static int findCycleLength(ListNode head) {

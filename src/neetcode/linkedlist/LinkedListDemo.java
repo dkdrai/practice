@@ -1,5 +1,7 @@
 package neetcode.linkedlist;
 
+import datastructures.ListNode;
+
 public class LinkedListDemo {
 
   static ListNode head;
@@ -57,7 +59,7 @@ public class LinkedListDemo {
     ListNode current = head;
     System.out.println("the elements are");
     while (current != null) {
-      System.out.println(current.val);
+      System.out.println(current.data);
       current = current.next;
     }
   }
@@ -131,7 +133,7 @@ public class LinkedListDemo {
       return list1;
     }
     ListNode head = null;
-    if (list1.val < list2.val) {
+    if (list1.data < list2.data) {
       head = list1;
       list1 = list1.next;
     } else {
@@ -141,7 +143,7 @@ public class LinkedListDemo {
 
     ListNode tail = head;
     while (list1 != null && list2 != null) {
-      if (list1.val < list2.val) {
+      if (list1.data < list2.data) {
         tail.next = list1;
         list1 = list1.next;
       } else {

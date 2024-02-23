@@ -1,5 +1,7 @@
 package neetcode.linkedlist;
 
+import datastructures.ListNode;
+
 public class fsp4MiddleoftheLinkedList {
 
   static ListNode head;
@@ -11,7 +13,7 @@ public class fsp4MiddleoftheLinkedList {
     push(1);
     push(0);
     //head.next.next.next = head;
-    System.out.println(detectLoop().val);
+    System.out.println(detectLoop().data);
 
   }
 

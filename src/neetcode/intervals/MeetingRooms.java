@@ -1,4 +1,4 @@
-package neetcode.interdatas;
+package neetcode.intervals;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,9 +34,13 @@ public class MeetingRooms {
     list.add(iv);
     iv = new Interdata(9, 15);
     list.add(iv);
-
+    iv = new Interdata(1, 4);
+    list.add(iv);
     Comparator<Interdata> comparator = (o1, o2) -> o1.start < o2.start ? -1 : o1.start == o2.start ? 0 : 1;
     Collections.sort(list, comparator);
+    for(Interdata data : list){
+      System.out.println(data.start+" "+data.end);
+    }
     System.out.println("output" + canAttendMeetings(list));
   }
 }

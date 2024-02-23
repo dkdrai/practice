@@ -3,6 +3,8 @@ package neetcode.intervals;
 import java.util.LinkedList;
 
 public class InsertInterval {
+
+
     public int[][] insert(int[][] intervals, int[] newInterval) {
         // init data
         int newStart = newInterval[0], newEnd = newInterval[1];

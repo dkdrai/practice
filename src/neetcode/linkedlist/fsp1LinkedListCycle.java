@@ -1,5 +1,7 @@
 package neetcode.linkedlist;
 
+import datastructures.ListNode;
+
 public class fsp1LinkedListCycle {
 
   static ListNode head;
@@ -41,7 +43,7 @@ public class fsp1LinkedListCycle {
     ListNode current = head;
     System.out.println("the elements are");
     while (current != null) {
-      System.out.println(current.val);
+      System.out.println(current.data);
       current = current.next;
     }
   }
